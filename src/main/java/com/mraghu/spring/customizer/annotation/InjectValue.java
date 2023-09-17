@@ -13,6 +13,8 @@ public @interface InjectValue {
 
     @AliasFor(annotation = org.springframework.beans.factory.annotation.Value.class)
     String value();
+
+    String description() default "";
     String name() default "";
     String expireDate() default "";
 
