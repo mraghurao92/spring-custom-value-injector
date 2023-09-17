@@ -9,7 +9,7 @@ configuration management and property monitoring. The `@InjectValue` annotation 
 - **Custom Annotation**: Replace the standard `@Value` annotation with `@InjectValue` for extended functionality.
 
 - **Monitoring**: The project includes a Spring Scheduler that runs every hour to retrieve `@InjectValue` properties
-  from all beans and log their content. This monitoring feature aids in tracking property values, including expiration
+  from all beans and log their content asynchronously. This monitoring feature aids in tracking property values, including expiration
   dates.
 
 ## Usage
@@ -52,7 +52,7 @@ To utilize the `@InjectValue` annotation in your Spring Boot project, follow the
     ```
 
 5. The Spring Scheduler will automatically run every hour to retrieve `@InjectValue` properties from all beans and log
-   their content for monitoring purposes.
+   their content asynchronously for monitoring purposes.
 
 ### `@InjectValue` Annotation Attributes
 
