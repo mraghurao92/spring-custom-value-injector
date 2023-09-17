@@ -1,20 +1,20 @@
 # Custom Spring Boot @InjectValue Annotation
 
-This project provides a custom implementation of the `@InjectValue` annotation in Spring Boot, allowing for enhanced
-configuration management and monitoring of properties. The `@InjectValue` annotation is designed to work similarly to
-the built-in `@Value` annotation but with additional features.
+This project provides a custom implementation of the `@InjectValue` annotation in Spring Boot, offering enhanced
+configuration management and property monitoring. The `@InjectValue` annotation functions similarly to the built-in
+`@Value` annotation but includes additional features.
 
 ## Features
 
-- **Custom Annotation**: Replace the standard `@Value` annotation with `@InjectValue` for enhanced functionality.
+- **Custom Annotation**: Replace the standard `@Value` annotation with `@InjectValue` for extended functionality.
 
-- **Monitoring**: A Spring Scheduler is included in the project that runs every hour to pull `@InjectValue` properties
-  from all beans and logs their content. This monitoring feature helps keep track of property values, including
-  expiration dates.
+- **Monitoring**: The project includes a Spring Scheduler that runs every hour to retrieve `@InjectValue` properties
+  from all beans and log their content. This monitoring feature aids in tracking property values, including expiration
+  dates.
 
 ## Usage
 
-To use the `@InjectValue` annotation in your Spring Boot project, follow these steps:
+To utilize the `@InjectValue` annotation in your Spring Boot project, follow these steps:
 
 1. Import the `InjectValue` annotation into your project.
 
@@ -37,10 +37,9 @@ To use the `@InjectValue` annotation in your Spring Boot project, follow these s
         description = "Open API key reference from Azure Key Vault",
         referencedBy = {"ABC ApiCall", "XYZ ApiCall", "Also referred in Kubernetes Secrets"},
         referencedFrom = {"AZURE_KEY_VAULT", "Devops Pipeline Secrets"}
-
     )
     private String myOpenApiKey;
-```
+    ```
 
 3. Configure your Spring Boot application to enable the custom functionality provided by `@InjectValue`.
 
@@ -50,11 +49,10 @@ To use the `@InjectValue` annotation in your Spring Boot project, follow these s
 
     ```properties
     project.root.package=com.example.myapp
-   
     ```
 
-5. The Spring Scheduler will automatically run every hour to pull `@InjectValue` properties from all beans and log their
-   content for monitoring purposes.
+5. The Spring Scheduler will automatically run every hour to retrieve `@InjectValue` properties from all beans and log
+   their content for monitoring purposes.
 
 ### `@InjectValue` Annotation Attributes
 
@@ -62,8 +60,8 @@ To use the `@InjectValue` annotation in your Spring Boot project, follow these s
 - `value`: (Required) The Spring Boot property placeholder expression that defines the property's value.
 - `expireDate`: (Optional) The expiration date of the property, if applicable.
 - `referencedBy`: (Optional) An array of strings indicating where and how the property is used within the application.
-- `referencedFrom`: (Optional) An array of strings indicating where the property is pulled from eg(Keyvault, K8's
-  secrets.
+- `referencedFrom`: (Optional) An array of strings indicating where the property is pulled from (e.g., Keyvault, K8's
+  secrets).
 - `description`: (Optional) A brief description or documentation for the property.
 
 Here's an example of how to use these attributes in the `@InjectValue` annotation:
