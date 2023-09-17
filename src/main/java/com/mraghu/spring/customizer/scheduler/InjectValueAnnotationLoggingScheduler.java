@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @EnableScheduling
-@ConditionalOnProperty(name = "inject.value.log.scheduler", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(name = "inject-value.log.scheduler", havingValue = "true", matchIfMissing = true)
 public class InjectValueAnnotationLoggingScheduler {
     private static final String LOGGING_CRON_EXPRESSION = "${inject-value-annotation.logging.cron:0 0/60 * * * ?}";
     @Autowired

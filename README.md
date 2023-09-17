@@ -98,13 +98,13 @@ inject-value-annotation.logging.cron=0 * * * * *
 ### Enabling or Disabling the Logging Scheduler
 
 By default, the logging scheduler is enabled, which periodically logs `@InjectValue` properties from all beans. You can
-enable or disable the logging scheduler by setting the `inject.value.log.scheduler` property in
+enable or disable the logging scheduler by setting the `inject-value.log.scheduler` property in
 your `application.properties` or `application.yml` file.
 
 To **enable** the logging scheduler (default behavior):
 
 ```properties
-inject.value.log.scheduler=true
+inject-value.log.scheduler=true
 ```
 
 ## Troubleshooting
