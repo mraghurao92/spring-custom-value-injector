@@ -36,6 +36,7 @@ To use the `@InjectValue` annotation in your Spring Boot project, follow these s
 
     ```properties
     project.root.package=com.example.myapp
+   
     ```
 
 5. The Spring Scheduler will automatically run every hour to pull `@InjectValue` properties from all beans and log their content for monitoring purposes.
@@ -65,7 +66,14 @@ private String myOpenApiKey;
 This project relies on Spring Boot and its core functionality. Ensure that you have Spring Boot set up correctly in your project's dependencies.
 
 ## Configuration
-The monitoring functionality, which logs @InjectValue properties, is enabled by default and runs on an hourly basis. You can adjust the scheduling frequency or other configuration settings as needed for your project.
+
+### Adjusting the Cron Timer
+
+The monitoring functionality, which logs `@InjectValue` properties, runs on a cron timer by default, executing every hour. You can customize the scheduling frequency by adding the following property to your `application.properties` or `application.yml` file:
+
+```properties
+inject-value-annotation.logging.cron=0 * * * * *
+```
 
 ## Troubleshooting
 

@@ -21,7 +21,7 @@ public class InjectValueAnnotationLoggingScheduler {
      * This method uses the {@code @Scheduled} annotation to specify the cron expression for when the method should be executed.
      * The cron expression is set to run every 60 minutes.
      */
-    @Scheduled(cron = "0 0/60 * * * ?")
+    @Scheduled(cron = "${inject-value-annotation.logging.cron:0 0/60 * * * ?}")
     public void logValueAnnotationsPeriodically() {
 
         injectValueAnnotationScanner.scanAndLogValueAnnotations();
