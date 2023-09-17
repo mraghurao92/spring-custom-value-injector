@@ -54,9 +54,9 @@ public class InjectValueAnnotationScanner {
                 }
                 if (!injectValueLogMap.isEmpty())
                     valueAnnotationMap.put(clazz.getName(), injectValueLogMap);
-                if (!valueAnnotationMap.isEmpty())
-                    log.info("@InjectValue contents: {}", valueAnnotationMap);
             }
+            if (!valueAnnotationMap.isEmpty())
+                log.info("@InjectValue contents: {}", valueAnnotationMap);
         } catch (Exception e) {
             log.error("Error occurred while scanning and logging value annotations", e);
         }
