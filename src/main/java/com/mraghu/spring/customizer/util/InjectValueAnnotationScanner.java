@@ -72,7 +72,9 @@ public class InjectValueAnnotationScanner {
         injectValueLogMap.put("name", valueAnnotation.name());
         injectValueLogMap.put("expirationDate", valueAnnotation.expireDate());
         injectValueLogMap.put("propertyDescription", valueAnnotation.description());
-        injectValueLogMap.put("propertyBeingUsedBy", Arrays.stream(valueAnnotation.usedBy())
+        injectValueLogMap.put("propertyBeingUsedBy", Arrays.stream(valueAnnotation.referencedBy())
+                .toList());
+        injectValueLogMap.put("propertyBeingReferredFrom", Arrays.stream(valueAnnotation.referencedFrom())
                 .toList());
         valueAnnotationMap.put(clazz.getName(), injectValueLogMap);
     }

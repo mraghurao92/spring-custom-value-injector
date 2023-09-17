@@ -15,8 +15,12 @@ public @interface InjectValue {
     String value();
 
     String description() default "";
+
     String name() default "";
+
     String expireDate() default "";
 
-    String[] usedBy() default {};
+    String[] referencedBy() default {};
+
+    String[] referencedFrom() default {};
 }
